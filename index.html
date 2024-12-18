@@ -7,116 +7,155 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<header>
-    <nav>
-        <ul>
-            <li><a href="#casestudies">Case Studies</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-        </ul>
-    </nav>
-    <section class="title-container">
-        <h1> Your website is an investment in the success of your business.
-        </h1>
-
-        <p> We are here to help you succeed.</p>
-        <div class="btn-wrapper">
-            <button type="button" class=" work-button">Let's work together</button>
+<div class="outer-wrapper">
+    <header id="header" class="header-wrapper">
+        <div class="inner-content-container">
+            <nav class="navi">
+                <ul>
+                    <li><a href="#casestudies">Case Studies</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact-form">Contact Us</a></li>
+                </ul>
+            </nav>
         </div>
-    </section>
-</header>
-<main>
-    <section class="hello">
-        <section class="info-banner">
-            <h2>
-                <p>Rekupe is a digital agency in Los Angeles.</p>
-                <p>We use strategic UX, SEO optimization and beautiful<br>
-                    visual designs to help your business grow.
-                <p>We see every project as a fresh opportunity,<br>
-                    pushing ourselves to create new digital experiences.</p>
-            </h2>
-        </section>
-        <section class="contact-link">Have a question? Click here to contact us!</section>
-    </section>
+        <div class="title-container">
+            <h1> Your website is an investment in the <br>success of your business.
+            </h1>
 
-    <section class="work-section">
+            <p> We are here to help you succeed.</p>
+            <div class="btn-wrapper">
+                <button type="button" class="work-button">Let's work together</button>
+            </div>
+        </div>
+        <div class="header-squiggle"></div>
+    </header>
 
+    <main>
+        <div class="main-content-wrapper">
+            <section class="hello" id="first-lines">
+                <section class="info-banner">
+                    <h5>Rekupe is a digital agency in Los Angeles.</h5>
+                    <h5>We use strategic UX, SEO optimization and beautiful<br>
+                        visual designs to help your business grow.</h5>
+                    <h5>We see every project as a fresh opportunity,<br>
+                        pushing ourselves to create new digital experiences.</h5>
 
-        <article class="rolling-stone-article" id="casestudies">
+                </section>
+                <p class="contact-link" id="contact-black">Have a question? Click <a href="#contact-form">here</a> to contact us!</p>
+            </section>
 
-            You know Rolling Stone. It’s the definitive voice in music, politics and culture. It’s a global icon.
-
-        </article>
-
-        <article class="variety-article">
-
-
-            Variety is an industry leader for breaking entertainment news, reviews and box office results with archive of content dating back to 1905.
-        </article>
-
-        <article class="worth-article">
-
-            A global media platform connecting a community that embraces worth beyond wealth.
-
-        </article>
-
-    </section>
-
-    <section class="services" id="services">
-
-        <article class="Web Design">
-            Web Design Good web design is how companies stand out from their competitors. High quality web design leads to increased user conversion and engagement. Through a proven web design process, we help clients launch websites and products
-            that
-            improve on their bottom line.
-        </article>
-
-        <article class="">
-            Web Development Modern websites need to be responsive and fully functional at all sizes. We develop all of our sites with a mobile first approach and ensure that our code quality is clean, organized and performant. Already have a design
-            but need
-        </article>
-
-        <article class="">
-            User Experience In order to build successful products you have to understand the user. We create user personas, wireframes and prototypes to test with users. This allows us to gather feedback which helps to shape the product and can
-            quickly
-            eliminate potential risks – saving you time and money.
-        </article>
-
-        <article class="">
-            Logo Design + Branding Nike, Apple, Coca-Cola, Starbucks. What do all of these brands have in common? Easily recognizable logos and brand identity. The best brands stand out from the crowd by having a clear and unique point of view. We
-            will work
-            with you to understand your vision and help create a unique brand identity and style guide for your company.
-
-        </article>
-        SEO Do you want your site to rank higher in search results? Google is constantly changing their algorithms for how they rank pages. Don’t worry about constantly playing catch-up. We will make sure your website it optimized, providing you the
-        best
-        opportunities for organic search exposure.
-
-        <article class="">
-            SEO Do you want your site to rank higher in search results? Google is constantly changing their algorithms for how they rank pages. Don’t worry about constantly playing catch-up. We will make sure your website it optimized, providing you
-            the best
-            opportunities for organic search exposure.
-        </article>
-
-        <article class="">
-            Copy Writing Brand messaging needs to be clear, direct and easy to understand to be effective. A unique tone of voice will help you stand out from the crowd and build brand loyalty. We work with you to establish your brand bible and
-            ensure your
-            messaging is focused and targeted.
-        </article>
+            <section class="projects-section" id="casestudies">
 
 
-    </section>
+                <article class="project " id="rolling-stone">
+                    <img src="assets/work-image-01.jpeg" alt="Rolling Stone Image" class="project-image">
 
-    <section form id="contact">
-        <form>
-            Form
-            Let's work together
+                    <div class="project-content">
+                        <h3>Rolling Stone</h3>
+                        <p>You know Rolling Stone. It’s the definitive voice in music, politics, and culture. It’s a global icon.</p>
+                    </div>
+                </article>
 
-            Have a question? Need a quote? Let us know!
-        </form>
-    </section>
+                <article class="project order2" id="variety">
+                    <img src="assets/work-image-02.jpeg" alt="Rolling Stone Image" class="project-image">
+                    <div class="project-content">
+                        <h3>Variety</h3>
+                        <p>Variety is an industry leader for breaking entertainment news, reviews, and box office results with an archive of content dating back to 1905.</p>
+                    </div>
+                </article>
 
-</main>
+                <article class="project" id="worth">
+                    <img src="assets/work-image-03.jpeg" alt="Variety Image" class="project-image">
+                    <div class="project-content">
+                        <h3>Worth</h3>
+                        <p>A global media platform connecting a community that embraces worth beyond wealth.</p>
+                    </div>
+
+                </article>
+            </section>
+
+
+            <section class="services-wrapper" id="services">
+                <div class="card-row-wrapper">
+                    <article class="serviceblock" id="web-design">
+                        Web Design Good web design is how companies stand out from their competitors. High quality web design leads to increased user conversion and engagement. Through a proven web design process, we help clients launch websites and
+                        products
+                        that
+                        improve on their bottom line.
+                    </article>
+
+                    <article class="serviceblock" id="web-dev">
+                        Web Development Modern websites need to be responsive and fully functional at all sizes. We develop all of our sites with a mobile first approach and ensure that our code quality is clean, organized and performant. Already
+                        have a
+                        design
+                        but need
+                    </article>
+
+                    <article class="serviceblock" id="ue">
+                        User Experience In order to build successful products you have to understand the user. We create user personas, wireframes and prototypes to test with users. This allows us to gather feedback which helps to shape the product
+                        and
+                        can
+                        quickly
+                        eliminate potential risks – saving you time and money.
+                    </article>
+                </div>
+                <div class="card-row-wrapper">
+                    <article class="serviceblock" id="logo-design">
+                        Logo Design + Branding Nike, Apple, Coca-Cola, Starbucks. What do all of these brands have in common? Easily recognizable logos and brand identity. The best brands stand out from the crowd by having a clear and unique point of
+                        view.
+                        We
+                        will work
+                        with you to understand your vision and help create a unique brand identity and style guide for your company.
+
+                    </article>
+                    SEO Do you want your site to rank higher in search results? Google is constantly changing their algorithms for how they rank pages. Don’t worry about constantly playing catch-up. We will make sure your website it optimized,
+                    providing
+                    you
+                    the
+                    best
+                    opportunities for organic search exposure.
+
+                    <article class="serviceblock" id="seo">
+                        SEO Do you want your site to rank higher in search results? Google is constantly changing their algorithms for how they rank pages. Don’t worry about constantly playing catch-up. We will make sure your website it optimized,
+                        providing
+                        you
+                        the best
+                        opportunities for organic search exposure.
+                    </article>
+
+                    <article class="serviceblock" id="copywriting">
+                        Copy Writing Brand messaging needs to be clear, direct and easy to understand to be effective. A unique tone of voice will help you stand out from the crowd and build brand loyalty. We work with you to establish your brand
+                        bible
+                        and
+                        ensure your
+                        messaging is focused and targeted.
+                    </article>
+
+                </div>
+            </section>
+
+            <section id="contact-form">
+                <div class="form-wrapper">
+                    <h1>Let's work together</h1>
+
+                    <p class="contact-link" id="contact-white">Have a question? Need a quote? Let us know!></p>
+                    <form action="#" method="POST">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
 <footer>
     Business website opdracht © NOVI Hogeschool 2022
 </footer>
