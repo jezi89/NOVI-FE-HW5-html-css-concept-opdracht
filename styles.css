@@ -1,0 +1,329 @@
+/* Google Fonts Import Template Merriweather & ROBOTO */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+/*Alternatieven voor fonts:
+-
+-
+-
+-
+-
+-
+*/
+
+
+/*////////////////////////
+    Table of Contents
+    1. Global Styles
+    2. Typography
+    3. Helper Classes
+    4. Media Defaults
+    5. Layout
+    6. Areas
+        6.1 Header
+        6.2 Introduction
+////////////////////////*/
+
+/* ------------------------------- 1. Global Styles -------------------------------- */
+/* Variabelen, Basale resets en standaard browserinstellingen */
+
+:root {
+    /* CSS HEX */
+    --chrysler-blue: #5722cdff;
+    --majorelle-blue: #4b49e8ff;
+    --magnolia: #f2f0ffff;
+    --french-rose: #ed4385ff;
+    --night: #0c0c0cff;
+    --antiflash-white: #f3f6f9ff;
+    --gray: #7a7a7aff;
+
+    /* CSS HSL */
+    --text2-color: hsla(259, 72%, 47%, 1);
+    --main-color: hsla(241, 78%, 60%, 1);
+    --alt-color: hsla(248, 100%, 97%, 1);
+    --alt-color-trans: hsla(248, 100%, 97%, 0);
+    --button-bg-color: hsla(337, 83%, 60%, 1);
+    --text-color: hsla(0, 0%, 5%, 1);
+    --project-bgcolor: hsla(210, 33%, 96%, 1);
+    --tile-color: hsla(0, 0%, 48%, 1);
+
+    --f1: 'Roboto', sans-serif;
+    --f2: 'Merriweather', serif;
+
+}
+
+
+/* 1. Box-sizing reset */
+/* Ensure that the total width and height of an element includes padding and border */
+* {
+    box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+/* Prevent default spacing around elements */
+* {
+    margin: 0;
+}
+
+
+/* ------------------------------- 2. Typography ----------------------------------- */
+/* Regels die specifiek gericht zijn op typografie, zoals line-height */
+/*O1: OPTIONEEL en afhankelijk van gekozen FONTS:
+!* Font-families *!*/
+html {
+    font-family: var(--f1);
+    background-color: var(--alt-color);
+}
+
+h1, h2, h3 {
+    font-family: var(--f2);
+}
+
+
+/* 3. Text rendering improvement */
+/* Enhance text appearance on supported browsers */
+body {
+    -webkit-font-smoothing: antialiased; /* For Webkit browsers */
+    -moz-osx-font-smoothing: grayscale; /* For Firefox on macOS */
+    /* Referentie: https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth */
+}
+
+/* 4. Line height reset */
+/* Set a base line-height to ensure text accessibility */
+body * {
+    line-height: calc(2px + 2ex + 2px);
+
+}
+
+
+/* LET OP: Dit kan conflicteren met bestaande typografische stijlen.
+Het gebruik van een complexe berekening voor line-height kan visuele inconsistenties veroorzaken,
+vooral bij gebruik in combinatie met frameworks of bibliotheken die vaste line-height-waarden gebruiken.
+Referentie: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height */
+
+/* ------------------------------- 3. Helper Classes -------------------------------- */
+/* Klassen zoals .hidden en .visually-hidden */
+
+/* 5. Hide visually and from screen readers */
+/* Fully hides elements both visually and for assistive technologies */
+.hidden,
+[hidden] {
+    display: none !important;
+}
+
+/* 6. Hide only visually, but keep accessible for screen readers */
+/* Keeps elements accessible for screen readers while visually hidden */
+.visually-hidden {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+/* Referentie: https://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
+
+/* 7. Focusable visually-hidden elements */
+/* Makes visually hidden elements visible when focused */
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    white-space: inherit;
+    width: auto;
+}
+
+/* Referentie: https://www.drupal.org/node/897638 */
+
+/* 8. Maintain layout while hiding elements */
+/* Hides elements visually but preserves layout spacing */
+.invisible {
+    visibility: hidden;
+}
+
+/* ------------------------------- 4. Media Defaults -------------------------------- */
+/* Resets voor media-elementen zoals afbeeldingen en video's */
+
+/* 9. Media defaults */
+/* Prevent inline spacing issues and make media elements block-level */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* LET OP: While this is useful to prevent media elements from overflowing their containers, it can cause issues for specific use cases. For instance:
+   - When using media elements in inline contexts like navigation bars, additional styling is required to align them properly.
+   - If a media element needs to exceed its container dimensions, as in the case of an oversized image, you need to reset the max-width property using `max-width: revert;` on that specific element.
+   Referentie: https://www.joshwcomeau.com/css/custom-css-reset/#five-improve-media-defaults-6 */
+
+/* ------------------------------- 5. Layout ---------------------------------------- */
+/* Regels of resets die te maken hebben met containergedrag en positioning */
+/* Zet hier ook Basisregels voor grids (indien van toepassing).  */
+
+/* OPTIONAL WITHOUT FLEXBOX:
+O2. Vertical alignment for media elements */
+/* Aligns media elements within their containers */
+/* audio, canvas, iframe, img, svg, video {
+    vertical-align: middle;
+}
+LET OP: Deze reset is uitgeschakeld, want kan een conflict veroorzaken in gevallen waar media-elementen met flexbox of grid worden uitgelijnd,
+omdat vertical-align voornamelijk werkt in inline- en tabelcontexten.
+Referentie: https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align */
+
+/* O3. Clearfix */
+/* .clearfix::before,
+.clearfix::after {
+    content: "";
+    display: table;
+}
+.clearfix::after {
+    clear: both;
+} */
+/* LET OP: Deze reset is uitgeschakeld, want Novi raadt aan om float niet meer te gebruiken.
+Moderne alternatieven zoals Flexbox en Grid maken clearfix overbodig.
+Referentie: https://developer.mozilla.org/en-US/docs/Web/CSS/float */
+
+/* ------------------------------- 6. Areas ----------------------------------------- */
+/* Specifieke resetregels of basestijlen voor unieke secties zoals Header en Footer */
+/* Vul zelf verder aan met structuurelementen van de site  */
+
+body {
+    display: flex;
+    flex-flow: column;
+
+    text-align: center;
+}
+
+main {
+    background: var(--alt-color);
+    background: linear-gradient(4deg, var(--alt-color) 78%, var(--alt-color-trans) 78%);
+    margin-top: -5vh; /* Header overlappen */
+    position: relative;
+    z-index: 1; /* Achter header blijven */
+    padding-top: 4rem; /* Voeg extra ruimte toe om content niet te ver naar boven te duwen */
+}
+
+/*
+main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh; !* Hoogte van overlap *!
+    background: linear-gradient(to bottom, rgba(75, 73, 232, 1), transparent);
+    z-index: -1;
+}
+*/
+
+/* --------------- 6.1 Header ------------------------- */
+/* Voeg hier resetregels of basestijlen toe specifiek voor de header. */
+nav {
+    display: flex;
+    justify-content: end;
+}
+
+nav > ul {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    gap: 4rem;
+    padding: 1rem 2rem;
+}
+
+nav > ul > li {
+    display: flex;
+    flex: 1 0 auto;
+
+}
+
+nav > ul > li > a {
+    text-decoration: none;
+    color: var(--alt-color)
+
+}
+
+header {
+    display: flex;
+    flex-flow: column;
+    background: linear-gradient(130deg, rgba(75, 73, 232, 1) 48%, rgba(87, 34, 205, 1) 78%);
+    min-height: 30vh;
+    position: relative; /* Positionering instellen */
+    z-index: 0; /* Zorg dat de header boven andere elementen komt */
+}
+
+.title-container {
+
+    display: flex;
+    flex-flow: column;
+}
+
+.title-container > h1 {
+    padding: 1rem;
+}
+
+/* --------------- 6.2 Introduction ------------------- */
+/* Voeg hier resetregels of basestijlen toe specifiek voor de introductiesectie. */
+
+.info-banner {
+    margin-top: 4rem;
+
+}
+
+.info-banner h2 p {
+    margin: 0 0 1rem; /* Voegt ruimte toe tussen paragrafen */
+    line-height: 1.5; /* Stelt de hoogte van de lijnen in */
+}
+
+.work-button {
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px 20px;
+    border: 0px solid var(--french-rose);
+    border-radius: 45px;
+    background: var(--button-bg-color);
+    -webkit-box-shadow: var(--night) 1px 1px 3px;
+    -moz-box-shadow: var(--night) 1px 1px 3px;
+    box-shadow: var(--night) 1px 1px 3px;
+    text-shadow: var(--gray) 1px 1px 1px;
+    font: 400 normal 18px var(--f1);
+    color: var(--alt-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+}
+
+.work-button:hover {
+    border: 0px solid var(--french-rose);
+    background: linear-gradient(to bottom, var(--main-color), var(--text2-color));
+    color: var(--antiflash-white);
+    text-shadow: none;
+    cursor: pointer;
+}
+
+.work-button:active {
+    background: var(--french-rose);
+    background: linear-gradient(to bottom, var(--french-rose), var(--main-color));
+    box-shadow: inset var(--night) 1px 1px 2px;
+    color: var(--antiflash-white);
+    text-transform: uppercase;
+}
+
+
+/* --------------- 6.3 etc ------------------- */
+.work-section {
+
+    margin-top: 2rem;
+}
+
+/* --------------- 6. footer ------------------- */
+footer {
+    display: flex;
+    align-self: end;
+}
