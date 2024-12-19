@@ -41,7 +41,7 @@
                         pushing ourselves to create new digital experiences.</h5>
 
                 </section>
-                <p class="contact-link" id="contact-black">Have a question? Click <a href="#contact-form">here</a> to contact us!</p>
+                <p class="contact-link" id="contact-black">Have a question? <a href="#contact-form" class="nodeco">Click here</a> to contact us!</p>
             </section>
 
             <section class="projects-section" id="casestudies">
@@ -76,80 +76,90 @@
 
 
             <section class="services-wrapper" id="services">
-                <div class="card-row-wrapper">
-                    <article class="serviceblock" id="web-design">
-                        Web Design Good web design is how companies stand out from their competitors. High quality web design leads to increased user conversion and engagement. Through a proven web design process, we help clients launch websites and
+
+                <article class="serviceblock" id="web-design">
+                    <div class="img-for-card"><img src="assets/icon_web-design.svg">
+                        <h3>Web Design</h3></div>
+                    <p>Good web design is how companies stand out from their competitors. High quality web design leads to increased user conversion and engagement. Through a proven web design process, we help clients launch websites and
                         products
                         that
-                        improve on their bottom line.
-                    </article>
+                        improve on their bottom line.</p>
+                </article>
 
-                    <article class="serviceblock" id="web-dev">
-                        Web Development Modern websites need to be responsive and fully functional at all sizes. We develop all of our sites with a mobile first approach and ensure that our code quality is clean, organized and performant. Already
+                <article class="serviceblock" id="web-dev">
+                    <div class="img-for-card"><img src="assets/icon_web-development.svg">
+                        <h3>Web Development</h3></div>
+                    <p>Modern websites need to be responsive and fully functional at all sizes. We develop all of our sites with a mobile first approach and ensure that our code quality is clean, organized and performant. Already
                         have a
                         design
-                        but need
-                    </article>
+                        but need</p>
+                </article>
 
-                    <article class="serviceblock" id="ue">
-                        User Experience In order to build successful products you have to understand the user. We create user personas, wireframes and prototypes to test with users. This allows us to gather feedback which helps to shape the product
+                <article class="serviceblock " id="ux">
+                    <div class="img-for-card"><img src="assets/icon_ux.svg">
+                        <h3>User Experience</h3></div>
+                    <p>In order to build successful products you have to understand the user. We create user personas, wireframes and prototypes to test with users. This allows us to gather feedback which helps to shape the product
                         and
                         can
                         quickly
-                        eliminate potential risks – saving you time and money.
-                    </article>
-                </div>
-                <div class="card-row-wrapper">
-                    <article class="serviceblock" id="logo-design">
-                        Logo Design + Branding Nike, Apple, Coca-Cola, Starbucks. What do all of these brands have in common? Easily recognizable logos and brand identity. The best brands stand out from the crowd by having a clear and unique point of
+                        eliminate potential risks – saving you time and money.</p>
+                </article>
+
+                <article class="serviceblock sbspecial" id="logo-design">
+                    <div class="img-for-card"><img src="assets/icon_graphic-design.svg">
+                        <h3>Logo Design + Branding</h3></div>
+                    <p>Nike, Apple, Coca-Cola, Starbucks. What do all of these brands have in common? Easily recognizable logos and brand identity. The best brands stand out from the crowd by having a clear and unique point of
                         view.
                         We
                         will work
-                        with you to understand your vision and help create a unique brand identity and style guide for your company.
+                        with you to understand your vision and help create a unique brand identity and style guide for your company.</p>
+                </article>
 
-                    </article>
-                    SEO Do you want your site to rank higher in search results? Google is constantly changing their algorithms for how they rank pages. Don’t worry about constantly playing catch-up. We will make sure your website it optimized,
-                    providing
-                    you
-                    the
-                    best
-                    opportunities for organic search exposure.
-
-                    <article class="serviceblock" id="seo">
-                        SEO Do you want your site to rank higher in search results? Google is constantly changing their algorithms for how they rank pages. Don’t worry about constantly playing catch-up. We will make sure your website it optimized,
+                <article class="serviceblock sbspecial" id="seo">
+                    <div class="img-for-card"><img src="assets/icon_seo.svg">
+                        <h3>SEO</h3></div>
+                    <p>Do you want your site to rank higher in search results? Google is constantly changing their algorithms for how they rank pages. Don’t worry about constantly playing catch-up. We will make sure your website it optimized,
                         providing
                         you
                         the best
-                        opportunities for organic search exposure.
-                    </article>
+                        opportunities for organic search exposure.</p>
+                </article>
 
-                    <article class="serviceblock" id="copywriting">
-                        Copy Writing Brand messaging needs to be clear, direct and easy to understand to be effective. A unique tone of voice will help you stand out from the crowd and build brand loyalty. We work with you to establish your brand
+                <article class="serviceblock sbspecial" id="copywriting">
+                    <div class="img-for-card"><img src="assets/icon_copywriting.svg">
+                        <h3>Copy Writing</h3></div>
+
+                    <p>Brand messaging needs to be clear, direct and easy to understand to be effective. A unique tone of voice will help you stand out from the crowd and build brand loyalty. We work with you to establish your brand
                         bible
                         and
                         ensure your
-                        messaging is focused and targeted.
-                    </article>
+                        messaging is focused and targeted.</p>
+                </article>
 
-                </div>
+
             </section>
 
-            <section id="contact-form">
-                <div class="form-wrapper">
-                    <h1>Let's work together</h1>
+            <section class="contactform">
+                <div class="form-outer-wrapper">
+                    <div class="form-inner-wrapper">
+                        <h1>Let's work together</h1>
 
-                    <p class="contact-link" id="contact-white">Have a question? Need a quote? Let us know!></p>
+                        <p class="contact-link" id="contact-white">Have a question? Need a quote? Let us know!></p>
+                    </div>
                     <form action="#" method="POST">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <fieldset>
+                            <legend>Personalia:</legend>
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
 
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
 
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
 
-                        <button type="submit">Send</button>
+                            <button type="submit">Send</button>
+                        </fieldset>
                     </form>
                 </div>
             </section>

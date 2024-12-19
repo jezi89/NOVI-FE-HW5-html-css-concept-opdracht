@@ -365,8 +365,12 @@ main-content-wrapper {
     opacity: 0.9; /* Subtiele visuele feedback */
 }
 
+.nodeco {
+    text-decoration: none;
+    color: var(--text2-color)
+}
 
-/* --------------- 6.3 main-content ------------------- */
+
 /* --------------- 6.3 main-content ------------------- */
 .projects-section {
     display: flex;
@@ -376,7 +380,7 @@ main-content-wrapper {
     background-color: var(--alt-color);
 }
 
-/* --------------- 6.3 main-content ------------------- */
+
 .projects-section {
     display: flex;
     flex-direction: column;
@@ -425,21 +429,104 @@ main-content-wrapper {
 
 .services-wrapper {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    flex-wrap: wrap; /* Zorgt ervoor dat items naar de volgende rij gaan */
+    justify-content: center; /* Center alle blokken horizontaal */
+    gap: 2rem; /* Ruimte tussen de blokken */
+    margin: 10%;
 }
 
-.card-row-wrapper {
+.serviceblock {
+    flex: 1 1 calc(100% / 3 - 2rem); /* 3 kolommen, ruimte aftrekken voor de gap */
     display: flex;
+    flex-direction: column; /* Zorg dat tekst van boven begint */
+    justify-content: flex-start; /* Logo's e.d. beginnen op dezelfde plek. */
+    align-items: stretch; /* Hoogtes gelijk trekken */
 
+    text-align: left;
+    border-radius: 1%;
+    padding: 1.5em;
+    font-size: 0.8em;
+    border: 1px solid var(--text2-color);
+    overflow: hidden; /* Voorkomt dat content uit het blok loopt */
+    min-height: 250px; /* Optioneel: minimale hoogte instellen */
+}
+
+.serviceblock special {
+    min-height: 300px; /* Optioneel: minimale hoogte instellen */
+}
+
+.serviceblock .img-for-card {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.2em;
+    padding-bottom: 1rem;
+
+}
+
+.serviceblock img {
+    width: 40px;
+    height: 40px;
+}
+
+.serviceblock h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--text2-color);
+}
+
+.serviceblock p {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    line-height: 1.2;
+}
+
+footer {
+    display: flex;
+    align-self: end;
 }
 
 
 /*    margin-top: 2rem;*/
 /*}*/
 
+/*#contact-form {*/
+/*    display: flex;*/
+/*}*/
+
+.contactform {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-outer-wrapper {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.form-inner-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+form > * {
+    display: flex;
+    flex: 1 1 60%;
+    flex-flow: column;
+    /*justify-content: center;*/
+}
+
 /* --------------- 6. footer ------------------- */
 footer {
     display: flex;
     align-self: end;
+    background-color: var(--text-color);
+    color: var(--alt-color);
+    font-size: 12px;
+    padding: 1em;
+    justify-content: center;
 }
