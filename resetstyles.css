@@ -1,0 +1,127 @@
+/* 1. Box-sizing reset */
+/* Ensure that the total width and height of an element includes padding and border */
+* {
+    box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+/* Prevent default spacing around elements */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 3. Text rendering improvement */
+/* Enhance text appearance on supported browsers */
+body {
+    -webkit-font-smoothing: antialiased; /* For Webkit browsers */
+    -moz-osx-font-smoothing: grayscale; /* For Firefox on macOS */
+    /* Referentie: https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth */
+}
+
+/* 4. Line height reset */
+/* Set a base line-height to ensure text accessibility */
+body * {
+    line-height: calc(2px + 2ex + 2px);
+
+}
+
+
+/* LET OP: Dit kan conflicteren met bestaande typografische stijlen.
+Het gebruik van een complexe berekening voor line-height kan visuele inconsistenties veroorzaken,
+vooral bij gebruik in combinatie met frameworks of bibliotheken die vaste line-height-waarden gebruiken.
+Referentie: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height */
+
+/* ------------------------------- 3. Helper Classes -------------------------------- */
+/* Klassen zoals .hidden en .visually-hidden */
+
+/* 5. Hide visually and from screen readers */
+/* Fully hides elements both visually and for assistive technologies */
+.hidden,
+[hidden] {
+    display: none !important;
+}
+
+/* 6. Hide only visually, but keep accessible for screen readers */
+/* Keeps elements accessible for screen readers while visually hidden */
+.visually-hidden {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+/* Referentie: https://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
+
+/* 7. Focusable visually-hidden elements */
+/* Makes visually hidden elements visible when focused */
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    white-space: inherit;
+    width: auto;
+}
+
+/* Referentie: https://www.drupal.org/node/897638 */
+
+/* 8. Maintain layout while hiding elements */
+/* Hides elements visually but preserves layout spacing */
+.invisible {
+    visibility: hidden;
+}
+
+/* ------------------------------- 4. Media Defaults -------------------------------- */
+/* Resets voor media-elementen zoals afbeeldingen en video's */
+
+/* 9. Media defaults */
+/* Prevent inline spacing issues and make media elements block-level */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* LET OP: While this is useful to prevent media elements from overflowing their containers, it can cause issues for specific use cases. For instance:
+   - When using media elements in inline contexts like navigation bars, additional styling is required to align them properly.
+   - If a media element needs to exceed its container dimensions, as in the case of an oversized image, you need to reset the max-width property using `max-width: revert;` on that specific element.
+   Referentie: https://www.joshwcomeau.com/css/custom-css-reset/#five-improve-media-defaults-6 */
+
+/* ------------------------------- 5. Layout ---------------------------------------- */
+/* Regels of resets die te maken hebben met containergedrag en positioning */
+/* Zet hier ook Basisregels voor grids (indien van toepassing).  */
+
+/* OPTIONAL WITHOUT FLEXBOX:
+O2. Vertical alignment for media elements */
+/* Aligns media elements within their containers */
+/* audio, canvas, iframe, img, svg, video {
+    vertical-align: middle;
+}
+LET OP: Deze reset is uitgeschakeld, want kan een conflict veroorzaken in gevallen waar media-elementen met flexbox of grid worden uitgelijnd,
+omdat vertical-align voornamelijk werkt in inline- en tabelcontexten.
+Referentie: https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align */
+
+/* O3. Clearfix */
+/* .clearfix::before,
+.clearfix::after {
+    content: "";
+    display: table;
+}
+.clearfix::after {
+    clear: both;
+} */
+/* LET OP: Deze reset is uitgeschakeld, want Novi raadt aan om float niet meer te gebruiken.
+Moderne alternatieven zoals Flexbox en Grid maken clearfix overbodig.
+Referentie: https://developer.mozilla.org/en-US/docs/Web/CSS/float */
+
+/* ------------------------------- 6. Areas ----------------------------------------- */
+/* Specifieke resetregels of basestijlen voor unieke secties zoals Header en Footer */
+/* Vul zelf verder aan met structuurelementen van de site  */
