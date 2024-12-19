@@ -495,29 +495,58 @@ footer {
 /*    display: flex;*/
 /*}*/
 
+.formarea {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex: 1 0 auto;
+    width: 100%;
+}
+
+.form-title-wrapper {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+/*.contactform {*/
+/*    display: flex;*/
+/*    width: 100%;*/
+
+/*    justify-content: center;*/
+/*}*/
+
 .contactform {
     display: flex;
-    flex-direction: column;
-}
-
-.form-outer-wrapper {
-    display: flex;
-    flex-direction: column;
-
-}
-
-.form-inner-wrapper {
-    display: flex;
-    flex-direction: column;
+    list-style: none;
+    flex-flow: column;
     align-items: center;
 
 }
 
-form > * {
+.form-outer-wrapper {
+
+    flex-flow: column wrap;
     display: flex;
-    flex: 1 1 60%;
-    flex-flow: column;
-    /*justify-content: center;*/
+    justify-content: center;
+    flex: 1 0 auto;
+}
+
+
+.form-outer-wrapper li {
+    flex: 1 0 50px;
+    max-width: 250px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.form-outer-wrapper > li > label, .form-outer-wrapper > li > button {
+    flex: 1 0 150px;
+
+}
+
+.form-outer-wrapper > li > label + * {
+    flex: 1 0 150px;
 }
 
 /* --------------- 6. footer ------------------- */
