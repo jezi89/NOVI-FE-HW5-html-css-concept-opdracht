@@ -1,5 +1,5 @@
 /* Google Fonts Import Template Merriweather & ROBOTO */
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@300;400;500;600;700&display=swap');
 
 /*Alternatieven voor fonts:
 -
@@ -39,7 +39,7 @@
 
 html {
     font-family: var(--f1);
-    background-color: var(--alt-color);
+    background-color: var(--project-bgcolor);
 }
 
 h1, h2, h3 {
@@ -56,7 +56,7 @@ h5 {
 
 p {
     font-weight: 300;
-
+ font-size: 1.2em;
 }
 
 /* ------------------------------- 3. Helper Classes -------------------------------- */
@@ -119,10 +119,9 @@ p {
 /* Specifieke resetregels of basestijlen voor unieke secties zoals Header en Footer */
 /* Vul zelf verder aan met structuurelementen van de site  */
 
-image {
-    max-width: 20%;
+img {
+    width: 100%;
 }
-
 /* --------------- 6.1 Header ------------------------- */
 
 .outer-header-wrapper {
@@ -195,7 +194,7 @@ image {
     left: 0;
     width: 100%;
     height: 4rem;
-    background: var(--alt-color);
+    background: var(--project-bgcolor);
     clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 65%);
     z-index: 1;
 }
@@ -208,7 +207,7 @@ image {
     margin-top: 1rem; /* Verhoogt de ruimte boven de hele wrapper */
 }
 
-.work-button {
+.work-button, .form-button {
     position: relative;
     text-transform: uppercase;
     padding: 10px 15px;
@@ -286,99 +285,136 @@ image {
 .projects-section {
     display: flex;
     flex-direction: column;
-    gap: 2rem; /* Ruimte tussen projecten */
-    padding: 2rem;
+
     background-color: var(--alt-color);
 }
 
 .projects-section {
     display: flex;
     flex-direction: column;
-    gap: 2rem; /* Ruimte tussen projecten */
-    padding: 2rem;
+    row-gap: 3rem; /* Ruimte tussen projecten */
     background-color: var(--alt-color);
+    padding:   10rem ;
 }
 
 .project {
     display: flex;
-    flex-direction: row-reverse; /* Standaard layout: afbeelding en tekst naast elkaar */
-    gap: 1rem;
+    flex-flow: row-reverse wrap; /* Standaard layout: afbeelding en tekst naast elkaar */
     align-items: center;
-    background-color: var(--antiflash-white);
-    padding: 1rem;
-    border: 1px solid var(--scol);
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--alt-color);
+justify-content: space-around;
 }
 
-.order2 {
+.project:nth-child(odd) {
+    display: flex;
+
+}
+
+.project:nth-child(even) {
     flex-direction: row; /* Keert de volgorde om: afbeelding rechts */
+
+}
+
+
+
+.img-wrapper {
+    flex-basis: 800px;
+    padding-bottom: 2rem;
+    flex-grow: 0;
+    flex-shrink: 1;
+height: auto;
 }
 
 .project img {
-    width: 40%; /* Pas aan voor gewenste breedte */
-    height: auto;
-    border-radius: 8px;
+
+    box-shadow:
+            0.1px 0.8px 0.7px -8px rgba(0, 0, 0, 0.025),
+            0.3px 2.1px 1.7px -8px rgba(0, 0, 0, 0.035),
+            0.7px 4.3px 3.4px -8px rgba(0, 0, 0, 0.045),
+            1.5px 8.8px 6.9px -8px rgba(0, 0, 0, 0.055),
+            4px 24px 19px -8px rgba(0, 0, 0, 0.08)
+;
 }
 
 .project-content {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    flex: 1; /* Tekst vult resterende ruimte */
-    padding: 3em;
+    align-items: flex-start;
+    /*De content moet in de basis 480 breed zijn*/
+    flex-basis: 480px;
+    /*Als er meer ruimte is, mag hij NIET groter worden*/
+    flex-grow: 0;
+    /*Als er minder ruimte is, mag hij NIET kleiner worden*/
+    flex-shrink: 0;
+    padding: 0 1rem 1rem 1rem;
 }
+
+
 
 .project-content h3 {
     color: var(--text-color);
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-
+    font-size: 2em;
 }
 
 .project-content p {
-    padding-top: 2em;
-    font-size: 0.9em;
+
+    font-size: 1.2em;
     font-weight: 500;
     color: var(--text-color);
-    line-height: 1.5;
+    padding: 3em 0;
+
 }
 
 .projectview {
     color: var(--main-color);
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 0.8em;
+}
+
+.squiggle-wrapper {
+    width: 4rem;
+}
+
+.squiggle-wrapper img {
+    box-shadow: none;
+    padding-top: 1em;
+}
+
+@media only screen and (max-width: 800px) {
+    .project-content {
+        padding-left: 0;
+    }
+
 }
 
 /* 6.3.2 Main Info (Company Services) */
 
 .services-wrapper {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap; /* Zorgt ervoor dat items naar de volgende rij gaan */
     justify-content: center; /* Center alle blokken horizontaal */
-    gap: 2rem; /* Ruimte tussen de blokken */
-    margin: 10%;
+    /*gap: 2rem; !* Ruimte tussen de blokken *!*/
+    margin: 10em 16%;
+    gap: 2rem;
+}
+
+.article-row {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2rem;
 }
 
 .serviceblock {
     flex: 1 1 calc(100% / 3 - 2rem); /* 3 kolommen, ruimte aftrekken voor de gap */
     display: flex;
-    flex-direction: column; /* Zorg dat tekst van boven begint */
-    justify-content: flex-start; /* Logo's e.d. beginnen op dezelfde plek. */
+    flex-flow: column; /* Zorg dat tekst van boven begint */
     align-items: stretch; /* Hoogtes gelijk trekken */
-
-    text-align: left;
-    border-radius: 1%;
-    padding: 1.5em;
-    font-size: 0.8em;
+    min-height: auto;
+    padding: 2em 2em 0;
     border: 1px solid var(--text2-color);
     overflow: hidden; /* Voorkomt dat content uit het blok loopt */
-    min-height: 250px; /* Optioneel: minimale hoogte instellen */
-}
 
-.serviceblock special {
-    min-height: 300px; /* Optioneel: minimale hoogte instellen */
 }
 
 .serviceblock .img-for-card {
@@ -386,117 +422,154 @@ image {
     align-items: start;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 0.2em;
-    padding-bottom: 1rem;
 
 }
 
 .serviceblock img {
-    width: 40px;
-    height: 40px;
+    width: 120px;
+    height: 120px;
 }
 
 .serviceblock h3 {
-    margin: 0;
-    font-size: 1.2rem;
+    font-size: 1.4em;
     color: var(--text2-color);
+    padding-bottom: 1em;
 }
 
 .serviceblock p {
-    font-size: 0.8rem;
+
     color: var(--text-color);
     line-height: 1.2;
+    margin-bottom: 2em;
 }
 
-/* --------------- 6.4 Contact Form ------------------- */
-
-
-/*    margin-top: 2rem;*/
-/*}*/
-
-/*#contact-form {*/
-/*    display: flex;*/
-/*}*/
-
-.formarea {
-    display: flex;
-    flex-direction: column;
-
-    flex: 1 0 auto;
-    width: 100%;
+@media only screen and (max-width: 1678px) {
+    .serviceblock {
+        padding: 2em 1em 0;
+    }
+    .services-wrapper {
+        margin: 14%;
+    }
 }
 
-.form-title-wrapper {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
+@media only screen and (max-width: 1400px) {
+    .serviceblock {
+        min-width: 720px; /* Optioneel: minimale hoogte instellen */
+
+    }
 }
 
-/*.contactform {*/
-/*    display: flex;*/
-/*    width: 100%;*/
 
-/*    justify-content: center;*/
-/*}*/
+    @media only screen and (max-width: 1080px) {
+        .serviceblock {
+            min-width: 600px; /* Optioneel: minimale hoogte instellen */
 
-.contactform {
-    display: flex;
-    list-style: none;
-    flex-flow: column;
-    align-items: center;
-    margin-top: 2rem;
-}
+        }
 
-.form-outer-wrapper {
+        .services-wrapper {
+            margin: 12%;
+        }
+    }
 
-    flex-flow: column wrap;
-    display: flex;
-    justify-content: center;
-    flex: 1 0 auto;
-    gap: 1rem;
-}
+    @media only screen and (max-width: 960px) {
+        .serviceblock {
+            min-width: 480px; /* Optioneel: minimale hoogte instellen */
 
-.form-outer-wrapper li {
-    flex: 1 0 50px;
-    max-width: 450px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+        }
 
-}
+        .services-wrapper {
+            margin: 10%;
+        }
+    }
+    /* --------------- 6.4 Contact Form ------------------- */
+    /*    margin-top: 2rem;*/
+    /*}*/
+    /*#contact-form {*/
+    /*    display: flex;*/
+    /*}*/
+    .formarea {
+        display: flex;
+        flex-direction: column;
+background-color: var(--main-color);
+        flex: 1 0 auto;
+        width: 100%;
+        padding-top: 3rem;
+    }
 
-.form-outer-wrapper > li > label {
-    flex: 1 0 450px;
+    .form-title-wrapper {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        color: var(--alt-color)
+    }
 
-}
+    /*.contactform {*/
+    /*    display: flex;*/
+    /*    width: 100%;*/
+    /*    justify-content: center;*/
+    /*}*/
+    .contactform {
+        display: flex;
+        list-style: none;
+        flex-flow: column;
+        align-items: center;
+        margin-top: 2rem;
+        color: var(--alt-color);
+        font-size: 0.9em;
 
-.form-outer-wrapper > li > button {
-    flex: 1 0 250px;
-}
+    }
 
-.form-outer-wrapper > li > button {
-    margin: 2rem 0 2rem;
-}
+    .form-outer-wrapper {
 
-.form-outer-wrapper > li > label + * {
-    flex: 1 0 450px;
-}
+        flex-flow: column wrap;
+        display: flex;
+        justify-content: center;
+        flex: 1 0 auto;
+        gap: 1rem;
+    }
 
-/* --------------- 6.5 Footer ------------------- */
+    .form-outer-wrapper li {
+        flex: 1 0 50px;
+        max-width: 450px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
 
-footer {
-    display: flex;
-    align-self: end;
-    background-color: var(--text-color);
-    color: var(--alt-color);
-    font-size: 12px;
-    padding: 1em;
-    justify-content: center;
-}
+    }
 
-/* --------------- 6.6 Extra ------------------- */
+    .form-outer-wrapper > li > label {
+        flex: 1 0 450px;
+        align-self: flex-end;
+    }
 
-.extra-section {
-    text-align: center;
-    padding: 2rem;
-    background: var(--tile-color);
+    .form-outer-wrapper > li > button {
+        flex: 1 0 auto;
+        height: 3rem;
+        max-width: 150px;
+    }
+
+    .form-outer-wrapper > li > button {
+        margin: 0.5rem 0 2rem;
+    }
+
+    .form-outer-wrapper > li > label + * {
+        flex: 1 0 450px;
+    }
+
+    /* --------------- 6.5 Footer ------------------- */
+    footer {
+        display: flex;
+        align-self: end;
+        background-color: var(--text-color);
+        color: var(--alt-color);
+        font-size: 12px;
+        padding: 1em;
+        justify-content: center;
+    }
+
+    /* --------------- 6.6 Extra ------------------- */
+    .extra-section {
+        text-align: center;
+        padding: 2rem;
+        background: var(--tile-color);
+    }

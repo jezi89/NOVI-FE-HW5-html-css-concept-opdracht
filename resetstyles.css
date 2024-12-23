@@ -18,6 +18,7 @@ body {
     -webkit-font-smoothing: antialiased; /* For Webkit browsers */
     -moz-osx-font-smoothing: grayscale; /* For Firefox on macOS */
     /* Referentie: https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth */
+
 }
 
 /* 4. Line height reset */
