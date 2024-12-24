@@ -1,0 +1,35 @@
+
+:root {
+    /* CSS HEX */
+    --chrysler-blue: #5722cdff;
+    --majorelle-blue: #4b49e8ff;
+    --palatinate-blue: #4845e4ff;
+    --french-rose: #ed4385ff;
+    --night: #0c0c0cff;
+    --magnolia: #f2f0ffff;
+    --antiflash-white: #f3f6f9ff;
+    --gray: #7a7a7aff;
+
+    /* CSS HSL */
+    --text2-color: hsla(259, 72%, 47%, 1);
+    --main-color: hsla(241, 78%, 60%, 1);
+    --extra-main: hsla(241, 75%, 58%, 1);
+    --main-color-var: hsl(241, 78%, 70%);
+    --button-bg-color: hsla(337, 83%, 60%, 1);
+    --text-color: hsla(0, 0%, 5%, 1);
+    --text-color-var: hsl(0, 0%, 28.2%);
+    --alt-color: hsla(248, 100%, 97%, 1);
+    --project-bgcolor: hsla(210, 33%, 96%, 1);
+    --tile-color: hsla(0, 0%, 48%, 1);
+
+    --scol: rgba(0, 0, 0, 0.2);
+    --altscol: hsla(210, 33%, 96%, 0.6);
+
+    /* Font-families *!*/
+    --f1: 'Roboto', sans-serif;
+    --f2: 'Merriweather', serif;
+}
+
+/*O1: OPTIONEEL Extra fonts
+!* Extra Font-families *!*/
+

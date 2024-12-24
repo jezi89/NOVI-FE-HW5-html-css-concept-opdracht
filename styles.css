@@ -1,0 +1,520 @@
+/* Google Fonts Import Template Merriweather & ROBOTO */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+/*Alternatieven voor fonts:
+-
+-
+-
+-
+-
+-
+*/
+
+
+/*////////////////////////
+    Table of Contents
+    1. Global Styles
+    2. Typography
+    3. Helper Classes
+    4. Media Defaults
+    5. Layout
+    6. Areas
+        6.1 Header
+        6.2 Introduction
+////////////////////////*/
+
+/*Zie reset-styles.css voor implementatie reset regels aangeduid met nummering.*/
+/* ------------------------------- 1. Global Styles -------------------------------- */
+/* Variabelen, Basale resets en standaard browserinstellingen */
+/*Zie variables.css voor toegepaste variabelen
+
+/* 1. Box-sizing reset */
+/* 2. Remove default margin */
+
+/* 3. Text rendering improvement */
+/* 4. Line height reset */
+
+/* ------------------------------- 2. Typography ----------------------------------- */
+/* Regels die specifiek gericht zijn op typografie, zoals line-height */
+
+html {
+    font-family: var(--f1);
+    background-color: var(--project-bgcolor);
+}
+
+h1, h2, h3 {
+    font-family: var(--f2);
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h5 {
+    font-size: 1.3rem;
+}
+
+p {
+    font-weight: 300;
+
+}
+
+/* ------------------------------- 3. Helper Classes -------------------------------- */
+/* Klassen zoals .hidden en .visually-hidden */
+
+/* 5. Hide visually and from screen readers */
+/* 6. Hide only visually, but keep accessible for screen readers */
+/* 7. Focusable visually-hidden elements */
+/* 8. Maintain layout while hiding elements */
+
+
+/* ------------------------------- 4. Media Defaults -------------------------------- */
+/* Resets voor media-elementen zoals afbeeldingen en video's */
+
+/* 9. Media defaults */
+
+/* ------------------------------- 5. Layout ---------------------------------------- */
+/* Regels of resets die te maken hebben met containergedrag en positioning */
+/* Zet hier ook Basisregels voor grids (indien van toepassing).  */
+
+
+/*.outer-wrapper {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+
+/*.inner-content-container {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    gap: 1rem;*/
+/*    padding: 0 1rem;*/
+/*}*/
+
+/*.flex-outer {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    gap: 2rem;*/
+/*}*/
+
+/*.flex-inner {*/
+/*    display: flex;*/
+/*    flex-flow: row wrap;*/
+/*    justify-content: space-between;*/
+/*    gap: 1rem;*/
+/*}*/
+
+/*.flex-column {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    gap: 1rem;*/
+/*}*/
+
+
+/* ------------------------------- 6. Areas ----------------------------------------- */
+/* Specifieke resetregels of basestijlen voor unieke secties zoals Header en Footer */
+/* Vul zelf verder aan met structuurelementen van de site  */
+
+image {
+    max-width: 20%;
+}
+
+/* --------------- 6.1 Header ------------------------- */
+
+.outer-header-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+}
+
+.header-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    flex: 1 0 65vh;
+
+}
+
+.inner-header-container {
+    margin: 0 auto;
+    padding: 0 2rem; /* Ruimte aan de zijkanten voor kleinere schermen */
+
+}
+
+.inner-header-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: end;
+    width: 100%;
+}
+
+.navi ul {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+}
+
+.navi ul li a {
+    color: var(--project-bgcolor);
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.title-container {
+    margin-top: 3rem;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.title-container > h1 {
+    padding: 1rem;
+}
+
+.title-container > p {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+
+#header {
+    background: linear-gradient(172deg, var(--main-color) 0%, var(--main-color) 65%, var(--text2-color) 98%);
+    position: relative;
+    color: var(--project-bgcolor);
+}
+
+#header::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; /* Zorgt dat het pseudo-element over de main valt */
+    left: 0;
+    width: 100%;
+    height: 4rem;
+    background: var(--project-bgcolor);
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 65%);
+    z-index: 1;
+}
+
+.btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Zorgt dat de knop onder de tekst staat */
+    margin-top: 1rem; /* Verhoogt de ruimte boven de hele wrapper */
+}
+
+.work-button {
+    position: relative;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background-color: var(--button-bg-color);
+    color: var(--alt-color);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+
+    /* Voeg een subtiele standaard text-shadow toe */
+    text-shadow: 0px 0px 1px var(--main-color-var);
+
+    /* Transitie-instellingen */
+    transition: all 0.07s ease-in-out;
+}
+
+.work-button:hover {
+    color: white;
+    border: 5px outset var(--button-bg-color);
+    background: linear-gradient(18deg, var(--extra-main) 0%, var(--extra-main) 12%, var(--text2-color) 85%);
+    background-size: 200% 200%;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4);
+    font-style: italic;
+    /* Licht springen van knop */
+    transform: scale(1.05);
+}
+
+/* --------------- 6.2 Hello (Intro text and Contactlink text) ------------------- */
+
+.hello {
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.info-banner {
+    text-align: center;
+    font-family: var(--f2);
+    font-weight: 700;
+    color: var(--text2-color);
+    margin-bottom: 1.5rem;
+}
+
+.info-banner h5 {
+    margin: 0 0 1rem; /* Voegt ruimte toe tussen paragrafen */
+    line-height: 1.5; /* Stelt de hoogte van de lijnen in */
+}
+
+.contact-link {
+    font-weight: 400;
+    font-size: 1em
+}
+
+.contact-link > a {
+    text-decoration: none;
+    color: var(--text2-color);
+}
+
+
+/*main-content-wrapper {*/
+/*    display: flex;*/
+/*    flex-flow: column;*/
+/*    max-width: clamp(320px, 80%, 1200px);*/
+/*    justify-content: center;*/
+
+
+/* --------------- 6.3 main-content ------------------- */
+
+/* 6.3.1 Main Articles (Project Showcase) */
+
+.projects-section {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem; /* Ruimte tussen projecten */
+    padding: 2rem;
+    background-color: var(--alt-color);
+    align-items: center;
+
+}
+
+.project {
+    display: flex;
+    flex-direction: row-reverse; /* Standaard layout: afbeelding en tekst naast elkaar */
+    gap: 5rem;
+    align-items: center;
+    background-color: var(--alt-color);
+    padding: 1rem;
+
+    justify-content: flex-end;
+}
+
+.project:nth-child(even) {
+    flex-direction: row; /* Keert de volgorde om: afbeelding rechts */
+}
+
+.squiggle-wrapper > img {
+    width: 4em;
+}
+
+.squiggle-wrapper {
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+img {
+    width: 100%;
+
+}
+
+.image-wrapper {
+    flex-basis: 900px;
+    flex-grow: 0;
+    flex-shrink: 1;
+
+}
+
+.image-wrappper > img {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.project-image {
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2), 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+.project-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    flex: 1; /* Tekst vult resterende ruimte */
+
+}
+
+.project-content h3 {
+    color: var(--text-color);
+    font-size: 1.5rem;
+
+}
+
+.project-content p {
+    padding-top: 2em;
+    font-weight: 500;
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.projectview {
+    color: var(--main-color);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.8em;
+}
+
+/* 6.3.2 Main Info (Company Services) */
+
+.services-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Zorgt ervoor dat items naar de volgende rij gaan */
+    justify-content: center; /* Center alle blokken horizontaal */
+    gap: 2rem; /* Ruimte tussen de blokken */
+    margin: 10%;
+}
+
+.serviceblock {
+    flex: 1 1 calc(100% / 3 - 2rem); /* 3 kolommen, ruimte aftrekken voor de gap */
+    display: flex;
+    flex-direction: column; /* Zorg dat tekst van boven begint */
+    justify-content: flex-start; /* Logo's e.d. beginnen op dezelfde plek. */
+    align-items: stretch; /* Hoogtes gelijk trekken */
+
+    text-align: left;
+    border-radius: 1%;
+    padding: 1.5em;
+    font-size: 0.8em;
+    border: 1px solid var(--text2-color);
+    overflow: hidden; /* Voorkomt dat content uit het blok loopt */
+    min-height: 250px; /* Optioneel: minimale hoogte instellen */
+}
+
+.serviceblock special {
+    min-height: 300px; /* Optioneel: minimale hoogte instellen */
+}
+
+.serviceblock .img-for-card {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.2em;
+    padding-bottom: 1rem;
+
+}
+
+.serviceblock img {
+    width: 40px;
+    height: 40px;
+}
+
+.serviceblock h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--text2-color);
+}
+
+.serviceblock p {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    line-height: 1.2;
+}
+
+/* --------------- 6.4 Contact Form ------------------- */
+
+
+/*    margin-top: 2rem;*/
+/*}*/
+
+/*#contact-form {*/
+/*    display: flex;*/
+/*}*/
+
+.formarea {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    width: 100%;
+    background-color: var(--main-color);
+}
+
+.form-title-wrapper {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    color: var(--alt-color);
+    padding-top: 4rem;
+}
+
+/*.contactform {*/
+/*    display: flex;*/
+/*    width: 100%;*/
+
+/*    justify-content: center;*/
+/*}*/
+
+.contactform {
+    display: flex;
+    list-style: none;
+    flex-flow: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.form-outer-wrapper {
+
+    flex-flow: column wrap;
+    display: flex;
+    justify-content: center;
+    flex: 1 0 auto;
+    gap: 1rem;
+}
+
+.form-outer-wrapper li {
+    flex: 1 0 50px;
+    max-width: 450px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+}
+
+.form-outer-wrapper > li > label {
+    flex: 1 0 450px;
+
+}
+
+.form-outer-wrapper > li > button {
+    flex: 1 0 250px;
+}
+
+.form-outer-wrapper > li > button {
+    margin: 2rem 0 2rem;
+}
+
+.form-outer-wrapper > li > label + * {
+    flex: 1 0 450px;
+}
+
+/* --------------- 6.5 Footer ------------------- */
+
+footer {
+    display: flex;
+    align-self: end;
+    background-color: var(--text-color);
+    color: var(--alt-color);
+    font-size: 12px;
+    padding: 0.3em;
+    justify-content: center;
+}
+
+/* --------------- 6.6 Extra ------------------- */
+
+.extra-section {
+    text-align: center;
+    padding: 2rem;
+    background: var(--tile-color);
+}
