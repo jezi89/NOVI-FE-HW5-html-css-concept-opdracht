@@ -47,16 +47,20 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    line-height: 0.5;
+
 }
 
 h5 {
-    font-size: 1.3rem;
+    font-size: clamp(1.1rem, 5vw, 1.3rem);
 }
 
-p {
+p, pre {
+    font-size: clamp(0.7rem, 2.5vw, 1.2rem);
     font-weight: 300;
- font-size: 1.2em;
+    font-family: var(--f1)
+
 }
 
 /* ------------------------------- 3. Helper Classes -------------------------------- */
@@ -122,6 +126,7 @@ p {
 img {
     width: 100%;
 }
+
 /* --------------- 6.1 Header ------------------------- */
 
 .outer-header-wrapper {
@@ -135,15 +140,22 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 100vw;
     padding: 1rem;
-    flex: 1 0 65vh;
-
+    min-height: 65vh;
+    height: auto;
 }
 
-.inner-header-container {
-    margin: 0 auto;
-    padding: 0 2rem; /* Ruimte aan de zijkanten voor kleinere schermen */
+@media (max-width: 800px) {
+    .header-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        padding: 1rem;
+
+        height: clamp(30vh, 45vh, 55vh); /* blijft staan */
+    }
 
 }
 
@@ -152,6 +164,8 @@ img {
     flex-flow: row;
     justify-content: end;
     width: 100%;
+    padding: 0 2rem; /* Ruimte aan de zijkanten voor kleinere schermen */
+
 }
 
 .navi ul {
@@ -167,7 +181,7 @@ img {
 }
 
 .title-container {
-    margin-top: 3rem;
+    margin-top: 3em;
     text-align: center;
     padding: 20px 0;
 }
@@ -178,14 +192,15 @@ img {
 
 .title-container > p {
     font-size: 1.5rem;
-    padding: 0.5rem;
+    padding: 2rem;
 }
 
 #header {
     background: linear-gradient(172deg, var(--main-color) 0%, var(--main-color) 65%, var(--text2-color) 98%);
     position: relative;
-    color: white;
+    color: var(--alt-color);
 }
+
 
 #header::after {
     content: '';
@@ -198,6 +213,22 @@ img {
     clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 65%);
     z-index: 1;
 }
+
+.header-squiggle {
+    position: absolute;
+    /* Zorgen dat dit bovenop de clip-path-lijn zit */
+    bottom: 32px;
+    /* In elk geval max. 100% van de parent - zie hieronder */
+    z-index: 2; /* boven #header::after */
+}
+
+.header-squiggle svg,
+.header-squiggle img {
+    display: block;
+    width: 100%; /* of max-width: 100%; */
+    height: 100%;
+}
+
 
 .btn-wrapper {
     display: flex;
@@ -226,6 +257,7 @@ img {
     transition: all 0.07s ease-in-out;
 }
 
+
 .work-button:hover {
     color: white;
     border: 3px solid var(--button-bg-color);
@@ -237,7 +269,9 @@ img {
     transform: scale(1.05);
 }
 
+
 /* --------------- 6.2 Hello (Intro text and Contactlink text) ------------------- */
+
 
 .hello {
     text-align: center;
@@ -246,6 +280,7 @@ img {
     gap: 1.5rem;
     padding: 2rem;
 }
+
 
 .info-banner {
     text-align: center;
@@ -258,6 +293,7 @@ img {
 .info-banner h5 {
     margin: 0 0 1rem; /* Voegt ruimte toe tussen paragrafen */
     line-height: 1.5; /* Stelt de hoogte van de lijnen in */
+    white-space: pre-wrap;
 }
 
 .contact-link {
@@ -294,7 +330,7 @@ img {
     flex-direction: column;
     row-gap: 3rem; /* Ruimte tussen projecten */
     background-color: var(--alt-color);
-    padding:   10rem ;
+    padding: 10rem;
 }
 
 .project {
@@ -302,7 +338,8 @@ img {
     flex-flow: row-reverse wrap; /* Standaard layout: afbeelding en tekst naast elkaar */
     align-items: center;
     background-color: var(--alt-color);
-justify-content: space-around;
+    justify-content: space-evenly;
+
 }
 
 .project:nth-child(odd) {
@@ -316,47 +353,46 @@ justify-content: space-around;
 }
 
 
-
 .img-wrapper {
     flex-basis: 800px;
-    padding-bottom: 2rem;
+
     flex-grow: 0;
     flex-shrink: 1;
-height: auto;
+    height: auto;
+
 }
 
 .project img {
 
-    box-shadow:
-            0.1px 0.8px 0.7px -8px rgba(0, 0, 0, 0.025),
-            0.3px 2.1px 1.7px -8px rgba(0, 0, 0, 0.035),
-            0.7px 4.3px 3.4px -8px rgba(0, 0, 0, 0.045),
-            1.5px 8.8px 6.9px -8px rgba(0, 0, 0, 0.055),
-            4px 24px 19px -8px rgba(0, 0, 0, 0.08)
-;
+    box-shadow: 0.1px 0.8px 0.7px -8px rgba(0, 0, 0, 0.025),
+    0.3px 2.1px 1.7px -8px rgba(0, 0, 0, 0.035),
+    0.7px 4.3px 3.4px -8px rgba(0, 0, 0, 0.045),
+    1.5px 8.8px 6.9px -8px rgba(0, 0, 0, 0.055),
+    4px 24px 19px -8px rgba(0, 0, 0, 0.08);
+
 }
 
 .project-content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: flex-start;
     /*De content moet in de basis 480 breed zijn*/
-    flex-basis: 480px;
+    flex-basis: 300px;
     /*Als er meer ruimte is, mag hij NIET groter worden*/
     flex-grow: 0;
     /*Als er minder ruimte is, mag hij NIET kleiner worden*/
     flex-shrink: 0;
-    padding: 0 1rem 1rem 1rem;
+    margin: 0 2rem;
 }
-
-
 
 .project-content h3 {
     color: var(--text-color);
     font-size: 2em;
+
 }
 
-.project-content p {
+.project-content pre {
 
     font-size: 1.2em;
     font-weight: 500;
@@ -413,7 +449,6 @@ height: auto;
     min-height: auto;
     padding: 2em 2em 0;
     border: 1px solid var(--text2-color);
-    overflow: hidden; /* Voorkomt dat content uit het blok loopt */
 
 }
 
@@ -422,6 +457,7 @@ height: auto;
     align-items: start;
     flex-direction: column;
     justify-content: flex-start;
+    padding: 1em 0 2em;
 
 }
 
@@ -447,6 +483,17 @@ height: auto;
     .serviceblock {
         padding: 2em 1em 0;
     }
+
+    .services-wrapper {
+        margin: 14%;
+    }
+}
+
+@media only screen and (max-width: 1678px) {
+    .serviceblock {
+        padding: 2em 1em 0;
+    }
+
     .services-wrapper {
         margin: 14%;
     }
@@ -460,116 +507,134 @@ height: auto;
 }
 
 
-    @media only screen and (max-width: 1080px) {
-        .serviceblock {
-            min-width: 600px; /* Optioneel: minimale hoogte instellen */
-
-        }
-
-        .services-wrapper {
-            margin: 12%;
-        }
-    }
-
-    @media only screen and (max-width: 960px) {
-        .serviceblock {
-            min-width: 480px; /* Optioneel: minimale hoogte instellen */
-
-        }
-
-        .services-wrapper {
-            margin: 10%;
-        }
-    }
-    /* --------------- 6.4 Contact Form ------------------- */
-    /*    margin-top: 2rem;*/
-    /*}*/
-    /*#contact-form {*/
-    /*    display: flex;*/
-    /*}*/
-    .formarea {
-        display: flex;
-        flex-direction: column;
-background-color: var(--main-color);
-        flex: 1 0 auto;
-        width: 100%;
-        padding-top: 3rem;
-    }
-
-    .form-title-wrapper {
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-        color: var(--alt-color)
-    }
-
-    /*.contactform {*/
-    /*    display: flex;*/
-    /*    width: 100%;*/
-    /*    justify-content: center;*/
-    /*}*/
-    .contactform {
-        display: flex;
-        list-style: none;
-        flex-flow: column;
-        align-items: center;
-        margin-top: 2rem;
-        color: var(--alt-color);
-        font-size: 0.9em;
+@media only screen and (max-width: 1080px) {
+    .serviceblock {
+        min-width: 600px; /* Optioneel: minimale hoogte instellen */
 
     }
 
-    .form-outer-wrapper {
-
-        flex-flow: column wrap;
-        display: flex;
-        justify-content: center;
-        flex: 1 0 auto;
-        gap: 1rem;
+    .services-wrapper {
+        margin: 12%;
     }
+}
 
-    .form-outer-wrapper li {
-        flex: 1 0 50px;
-        max-width: 450px;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
+@media only screen and (max-width: 960px) {
+    .serviceblock {
+        min-width: 480px; /* Optioneel: minimale hoogte instellen */
 
     }
 
-    .form-outer-wrapper > li > label {
-        flex: 1 0 450px;
-        align-self: flex-end;
+    .services-wrapper {
+        margin: 10%;
     }
+}
 
-    .form-outer-wrapper > li > button {
-        flex: 1 0 auto;
-        height: 3rem;
-        max-width: 150px;
-    }
+/* --------------- 6.4 Contact Form ------------------- */
+/*    margin-top: 2rem;*/
+/*}*/
+/*#contact-form {*/
+/*    display: flex;*/
+/*}*/
+.formarea {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-color);
+    flex: 1 0 auto;
+    width: 100%;
+    padding-top: 3rem;
+}
 
-    .form-outer-wrapper > li > button {
-        margin: 0.5rem 0 2rem;
-    }
+.form-title-wrapper {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    color: var(--alt-color)
+}
 
-    .form-outer-wrapper > li > label + * {
-        flex: 1 0 450px;
-    }
+/*.contactform {*/
+/*    display: flex;*/
+/*    width: 100%;*/
+/*    justify-content: center;*/
+/*}*/
+.contactform {
+    display: flex;
+    list-style: none;
+    flex-flow: column;
+    align-items: center;
+    margin-top: 2rem;
+    color: var(--alt-color);
+    font-size: 0.9em;
 
-    /* --------------- 6.5 Footer ------------------- */
-    footer {
-        display: flex;
-        align-self: end;
-        background-color: var(--text-color);
-        color: var(--alt-color);
-        font-size: 12px;
-        padding: 1em;
-        justify-content: center;
-    }
+}
 
-    /* --------------- 6.6 Extra ------------------- */
-    .extra-section {
-        text-align: center;
-        padding: 2rem;
-        background: var(--tile-color);
-    }
+.form-outer-wrapper {
+
+    flex-flow: column wrap;
+    display: flex;
+    justify-content: center;
+    flex: 1 0 auto;
+    gap: 1rem;
+}
+
+.form-outer-wrapper li {
+    flex: 1 0 50px;
+    max-width: 450px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+}
+
+.form-outer-wrapper > li > label {
+    flex: 1 0 450px;
+    align-self: flex-end;
+}
+
+.form-outer-wrapper > li > button {
+    flex: 1 0 auto;
+    height: 3rem;
+    max-width: 150px;
+}
+
+.form-outer-wrapper > li > button {
+    margin: 0.5rem 0 2rem;
+}
+
+.form-outer-wrapper > li > label + * {
+    flex: 1 0 450px;
+}
+
+input,
+textarea {
+    padding: 1em;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: gray; /* Voorbeeldstijl voor de placeholder */
+    font-family: var(--f1)
+
+}
+
+:focus::placeholder {
+    opacity: 0; /* Of gebruik color: transparent; */
+}
+
+/* --------------- 6.5 Footer ------------------- */
+footer {
+    display: flex;
+    align-self: end;
+    background-color: var(--text-color);
+    color: var(--alt-color);
+    font-size: 12px;
+    padding: 1em;
+    justify-content: center;
+}
+
+/* --------------- 6.6 Extra ------------------- */
+.extra-section {
+    text-align: center;
+    padding: 2rem;
+    background: var(--tile-color);
+}
+
