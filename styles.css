@@ -23,7 +23,7 @@
         6.2 Introduction
 ////////////////////////*/
 
-/*Zie resetstyles.css voor implementatie reset regels aangeduid met nummering.*/
+/*Zie reset-styles.css voor implementatie reset regels aangeduid met nummering.*/
 /* ------------------------------- 1. Global Styles -------------------------------- */
 /* Variabelen, Basale resets en standaard browserinstellingen */
 /*Zie variables.css voor toegepaste variabelen
@@ -229,7 +229,7 @@ image {
 
 .work-button:hover {
     color: white;
-    border: 5px outset  var(--button-bg-color);
+    border: 5px outset var(--button-bg-color);
     background: linear-gradient(18deg, var(--extra-main) 0%, var(--extra-main) 12%, var(--text2-color) 85%);
     background-size: 200% 200%;
     box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4);
@@ -296,7 +296,7 @@ image {
 .project {
     display: flex;
     flex-direction: row-reverse; /* Standaard layout: afbeelding en tekst naast elkaar */
-    gap: 15rem;
+    gap: 5rem;
     align-items: center;
     background-color: var(--alt-color);
     padding: 1rem;
@@ -323,19 +323,20 @@ img {
 }
 
 .image-wrapper {
-
     flex-basis: 900px;
     flex-grow: 0;
     flex-shrink: 1;
 
 }
+
 .image-wrappper > img {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 
 .project-image {
-    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2), 0 10px 30px rgba(0, 0, 0, 0.15);}
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2), 0 10px 30px rgba(0, 0, 0, 0.15);
 }
+
 
 .project-content {
     display: flex;
@@ -516,3 +517,4 @@ footer {
     text-align: center;
     padding: 2rem;
     background: var(--tile-color);
+}
