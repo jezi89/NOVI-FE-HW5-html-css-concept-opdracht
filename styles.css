@@ -183,7 +183,7 @@ img {
 .title-container {
     margin-top: 3em;
     text-align: center;
-    padding: 20px 0;
+    padding: 20px 0 200px 0;
 }
 
 .title-container > h1 {
@@ -225,7 +225,7 @@ img {
 .header-squiggle svg,
 .header-squiggle img {
     display: block;
-    width: 100%; /* of max-width: 100%; */
+    width: 75%; /* of max-width: 100%; */
     height: 100%;
 }
 
@@ -318,12 +318,6 @@ img {
 
 /* 6.3.1 Main Articles (Project Showcase) */
 
-.projects-section {
-    display: flex;
-    flex-direction: column;
-
-    background-color: var(--alt-color);
-}
 
 .projects-section {
     display: flex;
@@ -338,24 +332,19 @@ img {
     flex-flow: row-reverse wrap; /* Standaard layout: afbeelding en tekst naast elkaar */
     align-items: center;
     background-color: var(--alt-color);
-    justify-content: space-evenly;
+    justify-content: space-between;
 
 }
 
-.project:nth-child(odd) {
-    display: flex;
-
-}
 
 .project:nth-child(even) {
     flex-direction: row; /* Keert de volgorde om: afbeelding rechts */
-
 }
 
 
 .img-wrapper {
     flex-basis: 800px;
-
+max-width: 800px;
     flex-grow: 0;
     flex-shrink: 1;
     height: auto;
@@ -378,13 +367,39 @@ img {
     align-items: flex-start;
     justify-content: flex-start;
     /*De content moet in de basis 480 breed zijn*/
-    flex-basis: 300px;
+    flex-basis: 420px;
     /*Als er meer ruimte is, mag hij NIET groter worden*/
     flex-grow: 0;
     /*Als er minder ruimte is, mag hij NIET kleiner worden*/
     flex-shrink: 0;
     margin: 0 2rem;
 }
+
+@media (max-width: 1604px) {
+    .project-content {
+        margin: 0; /* Verwijdert marges voor kleinere schermen */
+        text-align: left; /* Zorgt dat tekst altijd links is uitgelijnd */
+        flex-basis: 0;
+
+
+    }
+
+
+    .project {
+        flex-direction: column; /* Zorgt dat afbeelding boven tekst staat */
+        align-items: flex-start; /* Lijn alles links uit */
+        justify-content: flex-start;
+    }
+
+    .img-wrapper {
+        display: flex;
+        flex-basis: 100%;
+    }
+
+}
+
+
+
 
 .project-content h3 {
     color: var(--text-color);
@@ -548,7 +563,8 @@ img {
     display: flex;
     flex-flow: column;
     align-items: center;
-    color: var(--alt-color)
+    color: var(--alt-color);
+    gap: 1.5em;
 }
 
 /*.contactform {*/
