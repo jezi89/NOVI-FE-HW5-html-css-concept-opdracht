@@ -289,7 +289,7 @@ img {
 }
 
 .hello-banner {
-    display: relative;
+    position: relative;
     text-align: center;
     font-family: var(--f2);
     font-weight: 700;
@@ -302,7 +302,7 @@ img {
 .hello-banner::before {
     content: "hello";
     position: absolute;
-    top: 85%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 18rem;
@@ -396,31 +396,40 @@ max-width: 800px;
     flex-grow: 0;
     /*Als er minder ruimte is, mag hij NIET kleiner worden*/
     flex-shrink: 0;
-    margin: 0 2rem;
+    padding: 0 2rem;
 }
 
-@media (max-width: 1604px) {
+@media (max-width: 1539px) {
     .project-content {
-        margin: 0; /* Verwijdert marges voor kleinere schermen */
-        text-align: left; /* Zorgt dat tekst altijd links is uitgelijnd */
-        flex-basis: 0;
-
-
-    }
-
-
-    .project {
-        flex-direction: column; /* Zorgt dat afbeelding boven tekst staat */
-        align-items: flex-start; /* Lijn alles links uit */
-        justify-content: flex-start;
-    }
-
-    .img-wrapper {
-        display: flex;
         flex-basis: 100%;
+        padding: 0px;
+
     }
 
+    .project:nth-child(odd) {
+        flex-flow: row wrap;
+    }
 }
+/*        margin: 0; !* Verwijdert marges voor kleinere schermen *!*/
+/*        text-align: left; !* Zorgt dat tekst altijd links is uitgelijnd *!*/
+/*        flex-basis: 0;*/
+
+
+/*    }*/
+
+
+/*    .project {*/
+/*        flex-direction: column; !* Zorgt dat afbeelding boven tekst staat *!*/
+/*        align-items: flex-start; !* Lijn alles links uit *!*/
+/*        justify-content: flex-start;*/
+/*    }*/
+
+/*    .img-wrapper {*/
+/*        display: flex;*/
+/*        flex-basis: 100%;*/
+/*    }*/
+
+/*}*/
 
 
 
@@ -510,7 +519,6 @@ max-width: 800px;
     align-items: start;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 1em 0 2em;
 
 }
 
@@ -529,7 +537,7 @@ max-width: 800px;
 
     color: var(--text-color);
     line-height: 1.2;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 
 @media only screen and (max-width: 1678px) {
