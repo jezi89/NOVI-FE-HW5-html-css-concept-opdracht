@@ -241,9 +241,15 @@ img {
 .work-button, .form-button {
     position: relative;
     text-transform: uppercase;
-    padding: 10px 15px;
+
+    font-weight: 500;
+    font-size: 1.1em;
+    padding: 20px 35px;
     border-radius: 50px;
-    border: none;
+    border: 2px solid transparent; /* Altijd een border aanwezig */
+
+    box-sizing: border-box; /* Inclusief border in de totale grootte */
+
     outline: none;
     background-color: var(--button-bg-color);
     color: var(--alt-color);
@@ -279,18 +285,36 @@ img {
     flex-flow: column;
     gap: 1.5rem;
     padding: 2rem;
+
 }
 
-
-.info-banner {
+.hello-banner {
+    display: relative;
     text-align: center;
     font-family: var(--f2);
     font-weight: 700;
     color: var(--text2-color);
     margin-bottom: 1.5rem;
+    z-index: 2; /* Voorgrondlaag */
+
 }
 
-.info-banner h5 {
+.hello-banner::before {
+    content: "hello";
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18rem;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.05);
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+
+.hello-banner h5 {
     margin: 0 0 1rem; /* Voegt ruimte toe tussen paragrafen */
     line-height: 1.5; /* Stelt de hoogte van de lijnen in */
     white-space: pre-wrap;
@@ -420,6 +444,20 @@ max-width: 800px;
     color: var(--main-color);
     text-transform: uppercase;
     font-weight: 700;
+}
+
+.projectview::after {
+    display: inline-block;
+    content: '';
+    width: 16px;
+    height: 1px;
+    margin: 0 0 4px 15px;
+    background-color: var(--main-color);
+    transition: width 0.4s ease-in-out;
+}
+
+.projectview:hover::after {
+    width: 40px;
 }
 
 .squiggle-wrapper {
@@ -606,14 +644,28 @@ max-width: 800px;
     align-self: flex-end;
 }
 
+
 .form-outer-wrapper > li > button {
-    flex: 1 0 auto;
-    height: 3rem;
+
     max-width: 150px;
+}
+
+.form-button:hover {
+    border: 2px solid white; /* Witte rand op hover */
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4); /* Dieper schaduw-effect */
+    transform: scale(1.05); /* Subtiele vergroting */
+}
+
+.form-button:active {
+    border: 2px solid var(--alt-color); /* Alternatieve kleur bij active */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Verminderde schaduw */
+    transform: scale(0.95); /* Subtiele verkleining bij active */
+    transition: all 0.1s ease-in; /* Snellere transitie bij active */
 }
 
 .form-outer-wrapper > li > button {
     margin: 0.5rem 0 2rem;
+    padidng-bottom: 1em;
 }
 
 .form-outer-wrapper > li > label + * {
@@ -638,13 +690,14 @@ textarea::placeholder {
 
 /* --------------- 6.5 Footer ------------------- */
 footer {
-    display: flex;
-    align-self: end;
+
     background-color: var(--text-color);
     color: var(--alt-color);
     font-size: 12px;
     padding: 1em;
     justify-content: center;
+    text-align: center;
+
 }
 
 /* --------------- 6.6 Extra ------------------- */
