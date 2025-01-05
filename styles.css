@@ -48,7 +48,7 @@ h1, h2, h3 {
 
 h1 {
     font-size: clamp(1.5rem, 5vw, 3rem);
-    line-height: 0.5;
+
 
 }
 
@@ -146,18 +146,18 @@ img {
     height: auto;
 }
 
-@media (max-width: 800px) {
-    .header-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100vw;
-        padding: 1rem;
+/*@media (max-width: 800px) {*/
+/*    .header-wrapper {*/
+/*        display: flex;*/
+/*        flex-direction: column;*/
+/*        align-items: center;*/
+/*        width: 100vw;*/
+/*        padding: 1rem;*/
 
-        height: clamp(30vh, 45vh, 55vh); /* blijft staan */
-    }
+/*        height: clamp(30vh, 45vh, 55vh); !* blijft staan *!*/
+/*    }*/
 
-}
+/*}*/
 
 .inner-header-container {
     display: flex;
@@ -241,12 +241,11 @@ img {
 .work-button, .form-button {
     position: relative;
     text-transform: uppercase;
-
     font-weight: 500;
     font-size: 1.1em;
     padding: 20px 35px;
     border-radius: 50px;
-    border: 2px solid transparent; /* Altijd een border aanwezig */
+    border: 3px solid transparent; /* Altijd een border aanwezig */
 
     box-sizing: border-box; /* Inclusief border in de totale grootte */
 
@@ -284,7 +283,7 @@ img {
     display: flex;
     flex-flow: column;
     gap: 1.5rem;
-    padding: 2rem;
+    padding: 4rem 2rem 8rem 2rem;
 
 }
 
@@ -295,21 +294,26 @@ img {
     font-weight: 700;
     color: var(--text2-color);
     margin-bottom: 1.5rem;
+
     z-index: 2; /* Voorgrondlaag */
 
 }
 
 .hello-banner::before {
     content: "hello";
+    font-family: var(--f1);
     position: absolute;
-    top: 75%;
-    left: 50%;
+    top: 45%;
+    left: 55%;
     transform: translate(-50%, -50%);
-    font-size: 18rem;
+    font-size: 20em;
     font-weight: 700;
-    color: rgba(0, 0, 0, 0.05);
+    opacity: 0.1;
     z-index: 1;
     pointer-events: none;
+    color: var(--main-color-var);
+    scale: 1.25;
+
 }
 
 
@@ -322,13 +326,31 @@ img {
 
 .contact-link {
     font-weight: 400;
-    font-size: 1em
+    font-size: 1rem
 }
 
 .contact-link > a {
     text-decoration: none;
     color: var(--text2-color);
 }
+
+.polygon-wrapper {
+    position: relative;
+
+}
+
+.polygon-wrapper::after  {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 4rem;
+    background: var(--alt-color);
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 65%);
+    z-index: 0;
+}
+
 
 
 /*main-content-wrapper {*/
@@ -351,19 +373,45 @@ img {
     padding: 10rem;
 }
 
+
+.project:nth-child(even) {
+    flex-flow: row-reverse wrap; /* Keert de volgorde om: afbeelding rechts */
+}
+
+
+.project:nth-child(odd) {
+    flex-flow: row wrap;
+}
+
+
 .project {
     display: flex;
-    flex-flow: row-reverse wrap; /* Standaard layout: afbeelding en tekst naast elkaar */
     align-items: center;
     background-color: var(--alt-color);
     justify-content: space-between;
 
 }
 
-
-.project:nth-child(even) {
-    flex-direction: row; /* Keert de volgorde om: afbeelding rechts */
+#casestudies {
+    postion: relative;
 }
+
+#casestudies::after {
+    content: "work";
+    font-family: var(--f1);
+    position: absolute;
+    left: 55%;
+    transform: translate(-50%, 145%);
+    font-size: 20em;
+    scale: 1.25;
+    font-weight: 700;
+    opacity: 0.1;
+
+    pointer-events: none;
+    color: red;
+    z-index: 1
+}
+
 
 
 .img-wrapper {
@@ -372,6 +420,7 @@ max-width: 800px;
     flex-grow: 0;
     flex-shrink: 1;
     height: auto;
+    z-index: 2
 
 }
 
@@ -406,9 +455,6 @@ max-width: 800px;
 
     }
 
-    .project:nth-child(odd) {
-        flex-flow: row wrap;
-    }
 }
 /*        margin: 0; !* Verwijdert marges voor kleinere schermen *!*/
 /*        text-align: left; !* Zorgt dat tekst altijd links is uitgelijnd *!*/
@@ -659,13 +705,13 @@ max-width: 800px;
 }
 
 .form-button:hover {
-    border: 2px solid white; /* Witte rand op hover */
+    border: 3px solid white; /* Witte rand op hover */
     box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4); /* Dieper schaduw-effect */
     transform: scale(1.05); /* Subtiele vergroting */
 }
 
 .form-button:active {
-    border: 2px solid var(--alt-color); /* Alternatieve kleur bij active */
+    border: 3px solid var(--alt-color); /* Alternatieve kleur bij active */
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Verminderde schaduw */
     transform: scale(0.95); /* Subtiele verkleining bij active */
     transition: all 0.1s ease-in; /* Snellere transitie bij active */
